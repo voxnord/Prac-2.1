@@ -48,13 +48,17 @@ string TFwords(string inp) {
     string lastWord = words.back();
     lastWord.pop_back();
 
+    string res;
+
     // Выводим обработанные слова кроме последнего
     for (size_t i = 0; i < words.size() - 1; ++i) 
     {
-        return LastToFirst(words[i]);
+        res += LastToFirst(words[i]) + ' ';
     }
     // Обработка последнего слова
-    return LastToFirst(lastWord) + ".";
+    res += LastToFirst(lastWord) + ".";
+
+    return res;
 }
 
 int main()
@@ -78,7 +82,7 @@ int main()
     getline(cin, inp);
 
     string TFw = TFwords(inp);
-    cout << "Преобразованная последовательность: " << TFw << std::endl;
+    cout << "Преобразованная последовательность: " << TFw << endl;
 
 
 }
